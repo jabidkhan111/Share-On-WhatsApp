@@ -1,0 +1,13 @@
+holder.binding.whatsapp.setOnClickListener(v -> {
+
+            try{
+                Intent whatsAppShare = new Intent(Intent.ACTION_SEND);
+                whatsAppShare.setType("text/plane");
+                whatsAppShare.setPackage("com.whatsapp");
+                whatsAppShare.putExtra(Intent.EXTRA_TEXT,jokesModelArrayList.get(position).getJokes());
+                context.startActivity(whatsAppShare);
+
+            }catch (Exception e){
+             e.printStackTrace();
+            }
+        });
